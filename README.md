@@ -1,8 +1,11 @@
-# web-dev-template
+## About me
 
-1. git clone https://github.com/jannunzi/web-dev-template.git
-1. cd web-dev-template
-1. npm install
-1. mongod
-1. node server.js
-1. browse to localhost:3000
+I'm Tommy Jenkins. I am a undergraduate Computer Science senior. I have some experience using AngularJS, but more experience using ReactJS to build web applications on my two coops.
+
+## Purpose of repository
+
+CS4550 Web Development assignments.
+
+## Hosted environment
+
+https://jenkins-thomas-webdev.herokuapp.com
