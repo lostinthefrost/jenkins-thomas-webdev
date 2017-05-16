@@ -2,6 +2,10 @@ input.form-control {
     margin-bottom: 5px;
 }
 
-body {
+body, form {
     padding-top: 36px;
+}
+
+span.glyphicon {
+    margin-right: 18px;
 }
