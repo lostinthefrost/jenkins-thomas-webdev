@@ -6,6 +6,10 @@ body, form {
     padding-top: 36px;
 }
 
-span.glyphicon {
-    margin-right: 18px;
+#profile {
+    color: #333;
+}
+
+.navbar-btn {
+    margin-right: 10px;
 }
