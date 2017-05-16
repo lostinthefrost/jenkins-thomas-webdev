@@ -2,8 +2,9 @@ input.form-control {
     margin-bottom: 5px;
 }
 
-body, form {
-    padding-top: 36px;
+div.container {
+    padding-top: 72px;
+    padding-bottom: 72px;
 }
 
 #profile {
