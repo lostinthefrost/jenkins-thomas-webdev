@@ -7,10 +7,24 @@ div.container {
     padding-bottom: 72px;
 }
 
-#profile {
+#page-title {
     color: #333;
+}
+
+.glyphicon-menu-left {
+    font-size: 15px;
 }
 
 .navbar-btn {
     margin-right: 10px;
+}
+
+li {
+    height: 56px;
+}
+
+.list-group-text {
+    position: relative;
+    top: 7px;
+    left: 6px;
 }
