@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Website</title>
+    <title>Edit Widget</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -10,14 +10,14 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header pull-left">
-        <a id="page-title" class="navbar-brand" href="website-list.html">
+        <a id="page-title" class="navbar-brand" href="widget-list.html">
             <span class="glyphicon glyphicon-menu-left"></span>
-            Edit Website
+            Edit Widget
         </a>
     </div>
     <div class="navbar-header pull-right">
         <a class="btn btn-default navbar-btn pull-right"
-           href="website-list.html">
+           href="widget-list.html">
             <span class="glyphicon glyphicon-ok"></span>
         </a>
     </div>
@@ -26,16 +26,20 @@
 <div class="container">
     <form>
         <div class="form-group">
-            <label for="name">Website Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name">
         </div>
         <div class="form-group">
-            <label for="description">Website Description</label>
-            <textarea class="form-control" rows="5" id="description" placeholder="Description"></textarea>
+            <label for="text">Text</label>
+            <input type="text" class="form-control" id="text">
+        </div>
+        <div class="form-group">
+            <label for="size">Size</label>
+            <input type="text" class="form-control" id="size">
         </div>
     </form>
     <a class="btn btn-danger btn-block"
-       href="website-list.html">Delete</a>
+       href="widget-list.html">Delete</a>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">

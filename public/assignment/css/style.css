@@ -15,8 +15,8 @@ div.container {
     font-size: 15px;
 }
 
-.navbar-btn {
-    margin-right: 10px;
+.img-responsive {
+    margin-bottom: 10px;
 }
 
 .list-group-item {
@@ -31,4 +31,19 @@ div.container {
 
 a:hover {
     text-decoration: none;
+}
+
+.article {
+    text-align: justify;
+    max-width: 830px;
+}
+
+.widget-list-btn {
+    position: relative;
+    left: 4px;
+    margin-left: 6px;
+}
+
+nav > div.pull-right {
+    margin-right: 10px;
 }
