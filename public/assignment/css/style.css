@@ -19,7 +19,7 @@ div.container {
     margin-right: 10px;
 }
 
-li {
+.list-group-item {
     height: 56px;
 }
 
