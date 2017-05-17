@@ -28,3 +28,7 @@ li {
     top: 7px;
     left: 6px;
 }
+
+a:hover {
+    text-decoration: none;
+}
