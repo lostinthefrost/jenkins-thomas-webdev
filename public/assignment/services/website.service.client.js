@@ -1,9 +1,9 @@
 (function () {
     angular
         .module('WebAppMaker')
-        .factory('WebsiteService', WebsiteService);
+        .factory('websiteService', websiteService);
 
-    function WebsiteService() {
+    function websiteService() {
 
         var websites = [
             { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
@@ -16,18 +16,33 @@
         ];
 
         return {
-            createWebsite          : createWebsite,
-            findAllWebsitesForUser : findAllWebsitesForUser,
-            findWebsiteById        : findWebsiteById,
-            updateWebsite          : updateWebsite,
-            deleteWebsite          : deleteWebsite
+            createWebsite      : createWebsite,
+            findWebsitesByUser : findWebsitesByUser,
+            findWebsiteById    : findWebsiteById,
+            updateWebsite      : updateWebsite,
+            deleteWebsite      : deleteWebsite
         };
 
         function createWebsite(website) {
             website._id = (new Date()).getTime() + "";
-            website.created = new Date();
-            website.updated = new Date();
             websites.push(website);
+        }
+
+        function findWebsitesByUser(userId) {
+            var resultSet = [];
+            for (var w in websites) {
+                var website = websites[w];
+                if (website.developerId === userId) {
+                    resultSet.push(website);
+                }
+            }
+            return resultSet;
+        }
+
+        function findWebsiteById(websiteId) {
+            return websites.find(function(website) {
+                return website._id === websiteId;
+            });
         }
 
         function updateWebsite(websiteId, website) {
@@ -44,23 +59,6 @@
             });
             var index = websites.indexOf(website);
             websites.splice(index, 1);
-        }
-
-        function findWebsiteById(websiteId) {
-            return websites.find(function(website) {
-                return website._id === websiteId;
-            });
-        }
-
-        function findAllWebsitesForUser(userId) {
-            var resultSet = [];
-            for (var w in websites) {
-                var website = websites[w];
-                if (website.developerId === userId) {
-                    resultSet.push(website);
-                }
-            }
-            return resultSet;
         }
     }
 })();
