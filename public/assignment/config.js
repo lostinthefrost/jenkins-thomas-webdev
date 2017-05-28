@@ -11,7 +11,7 @@
             .when('/login', {
                 templateUrl: '/views/user/templates/login.view.client.html',
 				controller: 'LoginController',
-				controllerAs: 'vm'
+				controllerAs: 'model'
             })
             .when('/register', {
                 templateUrl: '/views/user/templates/register.view.client.html',
@@ -24,7 +24,7 @@
 				controllerAs: 'model'
             })
             .when('/user/:userId/website', {
-                templateUrl: '/views/website/templates/website-list.view.client.html'
+                templateUrl: '/views/website/templates/website-list.view.client.html',
 				controller: 'WebsiteListController',
 				controllerAs: 'model'
             })
