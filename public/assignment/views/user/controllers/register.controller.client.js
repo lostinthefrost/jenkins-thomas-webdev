@@ -3,7 +3,7 @@
         .module('WebAppMaker')
         .factory('RegisterController', RegisterController);
 
-    function RegisterController() {
+    function RegisterController($location, UserService) {
 
         var model = this;
 
@@ -17,7 +17,7 @@
                 return;
             }
 
-            var found = userService.findUserByUsername(username);
+            var found = UserService.findUserByUsername(username);
 
             if (found !== null) {
                 model.error = "Username is not available";
@@ -27,7 +27,7 @@
                     password: password
                 };
 
-                userService.createUser(user);
+                UserService.createUser(user);
                 $location.url('/user/' + user._id);
             }
         }

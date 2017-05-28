@@ -1,9 +1,9 @@
 (function () {
     angular
         .module('WebAppMaker')
-        .factory('pageService', pageService);
+        .factory('PageService', PageService);
 
-    function pageService() {
+    function PageService() {
 
         var pages = [
             { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },

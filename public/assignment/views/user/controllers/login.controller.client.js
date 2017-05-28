@@ -3,13 +3,13 @@
         .module('WebAppMaker')
         .controller('LoginController', LoginController);
 
-    function LoginController($location, userService) {
+    function LoginController($location, UserService) {
 
         var model = this;
 
         model.login = function(username, password) {
 
-            var found = userService.findUserByCredentials(username, password);
+            var found = UserService.findUserByCredentials(username, password);
 
             if (found !== null) {
                 $location.url('/user/' + found._id);
