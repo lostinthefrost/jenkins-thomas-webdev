@@ -7,7 +7,7 @@
 
         var model = this;
         model.userId = $routeParams['userId'];
-        model.websiteId = $routeParams.websiteId;
+        model.websiteId = $routeParams['websiteId'];
 
         // event handlers
         model.createWebsite = createWebsite;
@@ -15,19 +15,19 @@
         model.deleteWebsite = deleteWebsite;
 
         function init() {
-            model.websites = WebsiteService.findAllWebsitesForUser(model.userId);
+            model.websites = WebsiteService.findWebsitesByUser(model.userId);
             model.website = WebsiteService.findWebsiteById(model.websiteId);
         }
         init();
 
         function createWebsite(website) {
-            website.developerId = model.userId;
             WebsiteService.createWebsite(website);
             $location.url('/user/'+model.userId+'/website');
         }
 
         function updateWebsite(website) {
-            WebsiteService.updateWebsite();
+            WebsiteService.updateWebsite(model.websiteId, website);
+            $location.url('/user/'+model.userId+'/website');
         }
 
         function deleteWebsite(websiteId) {
