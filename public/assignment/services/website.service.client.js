@@ -16,11 +16,11 @@
         ];
 
         return {
-            createWebsite      : createWebsite,
-            findWebsitesByUser : findWebsitesByUser,
-            findWebsiteById    : findWebsiteById,
-            updateWebsite      : updateWebsite,
-            deleteWebsite      : deleteWebsite
+            createWebsite        : createWebsite,
+            findWebsitesByUserId : findWebsitesByUserId,
+            findWebsiteById      : findWebsiteById,
+            updateWebsite        : updateWebsite,
+            deleteWebsite        : deleteWebsite
         };
 
         function createWebsite(userId, website) {
@@ -29,7 +29,7 @@
             websites.push(website);
         }
 
-        function findWebsitesByUser(userId) {
+        function findWebsitesByUserId(userId) {
             var resultSet = [];
             for (var w in websites) {
                 var website = websites[w];

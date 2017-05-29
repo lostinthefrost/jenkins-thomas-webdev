@@ -7,15 +7,12 @@
 
         var model = this;
 
+        model.userId = $routeParams['userId'];
+        model.websiteId = $routeParams['websiteId'];
         model.pageId = $routeParams['pageId'];
         model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
         model.trustThisContent = trustThisContent;
         model.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
-        model.getWidgetUrlForType = getWidgetUrlForType;
-
-        function getWidgetUrlForType(type) {
-            return 'views/widget/templates/widget-'+type.toLowerCase()+'.view.client.html';
-        }
 
         function getYouTubeEmbedUrl(youTubeLink) {
             var embedUrl = 'https://www.youtube.com/embed/';

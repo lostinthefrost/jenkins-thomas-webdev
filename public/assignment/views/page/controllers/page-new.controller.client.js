@@ -13,7 +13,7 @@
         model.createPage = createPage;
 
         function init() {
-            model.pages = PageService.findPagesByWebsite(model.websiteId);
+            model.pages = PageService.findPagesByWebsiteId(model.websiteId);
         }
         init();
 

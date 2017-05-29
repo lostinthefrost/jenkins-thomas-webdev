@@ -21,8 +21,8 @@
             </a>
         </div>
         <div class="navbar-header pull-right">
-            <a class="btn btn-default navbar-btn pull-right"
-               href="#!/user/{{model.userId}}/website">
+            <a ng-click="model.createWebsite(website)"
+               class="btn btn-default navbar-btn pull-right">
                 <span class="glyphicon glyphicon-ok"></span>
             </a>
         </div>
@@ -31,43 +31,13 @@
 
 <div class="container col-sm-4 hidden-xs">
     <ul class="list-group">
-        <li class="list-group-item">
+        <li ng-repeat="website in model.websites" class="list-group-item">
             <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Address Book App
+               href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                {{website.name}}
             </a>
             <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Blogger
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Blogging App
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Script Testing App
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
+               href="#!/user/{{model.userId}}/website/{{website._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
@@ -78,11 +48,19 @@
     <form>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name">
+            <input ng-model="website.name"
+                   type="text"
+                   class="form-control"
+                   id="name"
+                   placeholder="Name"/>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" rows="5" id="description" placeholder="Description"></textarea>
+            <textarea ng-model="website.description"
+                      class="form-control"
+                      rows="5"
+                      id="description"
+                      placeholder="Description"></textarea>
         </div>
     </form>
 </div>

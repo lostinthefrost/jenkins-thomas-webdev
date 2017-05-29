@@ -15,43 +15,13 @@
 
 <div class="container">
     <ul class="list-group">
-        <li class="list-group-item">
+        <li ng-repeat="website in model.websites" class="list-group-item">
             <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Address Book App
+               href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                {{website.name}}
             </a>
             <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Blogger
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Blogging App
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                Script Testing App
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
+               href="#!/user/{{model.userId}}/website/{{website._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>

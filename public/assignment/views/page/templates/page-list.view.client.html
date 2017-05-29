@@ -15,53 +15,13 @@
 
 <div class="container">
     <ul class="list-group">
-        <li class="list-group-item">
+        <li ng-repeat="page in model.pages" class="list-group-item">
             <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                Blog Post
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                {{page.name}}
             </a>
             <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                Blogs
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                Home
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                About
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a class="list-group-text"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                Contact Us
-            </a>
-            <a class="btn btn-default pull-right"
-               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
