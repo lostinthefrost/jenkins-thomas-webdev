@@ -1,28 +1,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="col-sm-4 hidden-xs">
         <div class="navbar-header pull-left">
-            <a id="page-title" class="navbar-brand" href="website-list.html">
+            <a id="page-title" class="navbar-brand" href="#!/user/{{model.userId}}/website">
                 <span class="glyphicon glyphicon-menu-left"></span>
                 Websites
             </a>
         </div>
         <div class="navbar-header pull-right">
             <a class="btn btn-default navbar-btn pull-right"
-               href="website-new.html">
+               href="#!/user/{{model.userId}}/website/new">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
         </div>
     </div>
     <div class="col-xs-12 col-sm-8">
         <div class="navbar-header pull-left">
-            <a id="page-title" class="navbar-brand" href="website-list.html">
+            <a id="page-title" class="navbar-brand" href="#!/user/{{model.userId}}/website">
                 <span class="glyphicon glyphicon-menu-left hidden-sm hidden-md hidden-lg hidden-xl"></span>
                 Edit Website
             </a>
         </div>
         <div class="navbar-header pull-right">
             <a class="btn btn-default navbar-btn pull-right"
-               href="website-list.html">
+               href="#!/user/{{model.userId}}/website">
                 <span class="glyphicon glyphicon-ok"></span>
             </a>
         </div>
@@ -33,41 +33,41 @@
     <ul class="list-group">
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Address Book App
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Blogger
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Blogging App
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Script Testing App
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
@@ -86,13 +86,13 @@
         </div>
     </form>
     <a class="btn btn-danger btn-block"
-       href="website-list.html">Delete</a>
+       href="#!/user/{{model.userId}}/website">Delete</a>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="navbar-header pull-right">
         <a class="btn btn-primary navbar-btn"
-           href="profile.html">
+           href="#!/user/{{model.userId}}">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </div>

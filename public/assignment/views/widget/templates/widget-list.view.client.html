@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header pull-left">
-        <a id="page-title" class="navbar-brand" href="page-list.html">
+        <a id="page-title" class="navbar-brand" href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
             <span class="glyphicon glyphicon-menu-left"></span>
             Widgets
         </a>
@@ -78,17 +78,17 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="navbar-header pull-left">
         <a class="btn btn-default navbar-btn widget-list-btn"
-           href="widget-list.html">
+           href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
             <span class="glyphicon glyphicon-play"></span>
         </a>
         <a class="btn btn-default navbar-btn widget-list-btn"
-           href="widget-list.html">
+           href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
             <span class="glyphicon glyphicon-eye-open"></span>
         </a>
     </div>
     <div class="navbar-header pull-right">
         <a class="btn btn-primary navbar-btn"
-           href="profile.html">
+           href="#!/user/{{model.userId}}">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </div>

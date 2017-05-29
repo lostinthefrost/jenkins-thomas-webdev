@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header pull-left">
-        <a id="page-title" class="navbar-brand" href="profile.html">
+        <a id="page-title" class="navbar-brand" href="#!/user/{{model.userId}}">
             <span class="glyphicon glyphicon-menu-left"></span>
             Websites
         </a>
     </div>
     <div class="navbar-header pull-right">
         <a class="btn btn-default navbar-btn pull-right"
-           href="website-new.html">
+           href="#!/user/{{model.userId}}/website/new">
             <span class="glyphicon glyphicon-plus"></span>
         </a>
     </div>
@@ -17,41 +17,41 @@
     <ul class="list-group">
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Address Book App
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Blogger
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Blogging App
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
         <li class="list-group-item">
             <a class="list-group-text"
-               href="page-list.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                 Script Testing App
             </a>
             <a class="btn btn-default pull-right"
-               href="website-edit.html">
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
                 <span class="glyphicon glyphicon-cog"></span>
             </a>
         </li>
@@ -61,7 +61,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="navbar-header pull-right">
         <a class="btn btn-primary navbar-btn"
-           href="profile.html">
+           href="#!/user/{{model.userId}}">
             <span class="glyphicon glyphicon-user"></span>
         </a>
     </div>
