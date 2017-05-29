@@ -1,7 +1,7 @@
 (function() {
     angular
         .module('WebAppMaker')
-        .factory('RegisterController', RegisterController);
+        .controller('RegisterController', RegisterController);
 
     function RegisterController($location, UserService) {
 
