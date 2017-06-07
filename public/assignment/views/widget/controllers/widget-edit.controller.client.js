@@ -17,24 +17,41 @@
         model.deleteWidget = deleteWidget;
 
         function init() {
-            model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
-            model.widget = WidgetService.findWidgetById(model.widgetId);
+            WidgetService
+                .findWidgetsByPageId(model.pageId)
+                .then(function(widgets) {
+                    model.widgets = widgets;
+                });
+            WidgetService
+                .findWidgetById(model.widgetId)
+                .then(function(widget) {
+                    model.widget = widget;
+                });
         }
         init();
 
         function createWidget(widget) {
-            WidgetService.createWidget(model.pageId, widget);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+            WidgetService
+                .createWidget(model.pageId, widget)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                });
         }
 
         function updateWidget(widget) {
-            WidgetService.updateWidget(model.widgetId, widget);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+            WidgetService
+                .updateWidget(model.widgetId, widget)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                });
         }
 
         function deleteWidget(widgetId) {
-            WidgetService.deleteWidget(widgetId);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+            WidgetService
+                .deleteWidget(widgetId)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget');
+                });
         }
     }
 })();

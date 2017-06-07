@@ -14,14 +14,21 @@
         model.createWidget = createWidget;
 
         function init() {
-            model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+            WidgetService
+                .findWidgetsByPageId(model.pageId)
+                .then(function(widgets) {
+                    model.widgets = widgets;
+                });
         }
         init();
 
         function createWidget(widgetType) {
             var widget = { widgetType: widgetType };
-            WidgetService.createWidget(model.pageId, widget);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+widget._id);
+            WidgetService
+                .createWidget(model.pageId, widget)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page/'+model.pageId+'/widget/'+widget._id);
+                });
         }
     }
 })();

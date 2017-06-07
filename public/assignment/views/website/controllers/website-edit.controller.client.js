@@ -15,24 +15,41 @@
         model.deleteWebsite = deleteWebsite;
 
         function init() {
-            model.websites = WebsiteService.findWebsitesByUserId(model.userId);
-            model.website = WebsiteService.findWebsiteById(model.websiteId);
+            WebsiteService
+                .findWebsitesByUserId(model.userId)
+                .then(function(websites) {
+                    model.websites = websites;
+                });
+            WebsiteService
+                .findWebsiteById(model.websiteId)
+                .then(function(website) {
+                    model.website = website;
+                });
         }
         init();
 
         function createWebsite(website) {
-            WebsiteService.createWebsite(website);
-            $location.url('/user/'+model.userId+'/website');
+            WebsiteService
+                .createWebsite(website)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website');
+                });
         }
 
         function updateWebsite(website) {
-            WebsiteService.updateWebsite(model.websiteId, website);
-            $location.url('/user/'+model.userId+'/website');
+            WebsiteService
+                .updateWebsite(model.websiteId, website)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website');
+                });
         }
 
         function deleteWebsite(websiteId) {
-            WebsiteService.deleteWebsite(websiteId);
-            $location.url('/user/'+model.userId+'/website');
+            WebsiteService
+                .deleteWebsite(websiteId)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website');
+                });
         }
     }
 })();

@@ -16,24 +16,41 @@
         model.deletePage = deletePage;
 
         function init() {
-            model.pages = PageService.findPagesByWebsiteId(model.websiteId);
-            model.page = PageService.findPageById(model.pageId);
+            PageService
+                .findPagesByWebsiteId(model.websiteId)
+                .then(function(pages) {
+                    model.pages = pages;
+                });
+            PageService
+                .findPageById(model.pageId)
+                .then(function(page) {
+                    model.page = page;
+                });
         }
         init();
 
         function createPage(page) {
-            PageService.createPage(model.websiteId, page);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+            PageService
+                .createPage(model.websiteId, page)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                });
         }
 
         function updatePage(page) {
-            PageService.updatePage(model.pageId, page);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+            PageService
+                .updatePage(model.pageId, page)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                });
         }
 
         function deletePage(pageId) {
-            PageService.deletePage(pageId);
-            $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+            PageService
+                .deletePage(pageId)
+                .then(function() {
+                    $location.url('/user/'+model.userId+'/website/'+model.websiteId+'/page');
+                });
         }
     }
 })();

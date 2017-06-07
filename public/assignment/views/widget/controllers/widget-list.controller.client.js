@@ -10,9 +10,17 @@
         model.userId = $routeParams['userId'];
         model.websiteId = $routeParams['websiteId'];
         model.pageId = $routeParams['pageId'];
-        model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
         model.trustThisContent = trustThisContent;
         model.getYouTubeEmbedUrl = getYouTubeEmbedUrl;
+
+        function init() {
+            WidgetService
+                .findWidgetsByPageId(model.pageId)
+                .then(function(widgets) {
+                    model.widgets = widgets;
+                });
+        }
+        init();
 
         function getYouTubeEmbedUrl(youTubeLink) {
             var embedUrl = 'https://www.youtube.com/embed/';

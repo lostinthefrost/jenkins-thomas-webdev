@@ -13,22 +13,25 @@
         function register(username, password, password2) {
 
             if (password !== password2) {
-                model.error = "Passwords must match";
+                model.error = 'Passwords must match';
                 return;
             }
 
-            var found = UserService.findUserByUsername(username);
+            var found = null;
 
-            if (found !== null) {
-                model.error = "Username is not available";
+            if(found !== null) {
+                model.error = 'Username is not available';
             } else {
                 var user = {
                     username: username,
                     password: password
                 };
 
-                UserService.createUser(user);
-                $location.url('/user/' + user._id);
+                UserService
+                    .createUser(user)
+                    .then(function (user) {
+                        $location.url('/user/' + user._id);
+                    });
             }
         }
     }
