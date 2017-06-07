@@ -15,6 +15,7 @@
 
 <div class="container article">
     <div ng-repeat="widget in model.widgets"
+         wbdv-sortable
          class="widget">
         <div class="widget-toolbar">
             <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
