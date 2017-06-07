@@ -24,42 +24,43 @@
         };
 
         function createWebsite(userId, website) {
-            website._id = (new Date()).getTime() + "";
-            website.developerId = userId;
-            websites.push(website);
+            var url = '/api/user/'+userId+'/website';
+            return $http.post(url, website)
+                        .then(function(response) {
+                            return response.data
+                        });
         }
 
         function findWebsitesByUserId(userId) {
-            var resultSet = [];
-            for (var w in websites) {
-                var website = websites[w];
-                if (website.developerId === userId) {
-                    resultSet.push(website);
-                }
-            }
-            return resultSet;
+            var url = '/api/user/'+userId+'/website';
+            return $http.get(url)
+                        .then(function(response) {
+                            return response.data
+                        });
         }
 
         function findWebsiteById(websiteId) {
-            return websites.find(function(website) {
-                return website._id === websiteId;
-            });
+            var url = '/api/website/'+websiteId;
+            return $http.get(url)
+                        .then(function(response) {
+                            return response.data
+                        });
         }
 
         function updateWebsite(websiteId, website) {
-            var oldWebsite = websites.find(function(website) {
-                return website._id === websiteId;
-            });
-            var index = websites.indexOf(oldWebsite);
-            websites[index] = website;
+            var url = '/api/website/'+websiteId;
+            return $http.put(url, website)
+                        .then(function(response) {
+                            return response.data
+                        });
         }
 
         function deleteWebsite(websiteId) {
-            var website = websites.find(function(website) {
-                return website._id === websiteId;
-            });
-            var index = websites.indexOf(website);
-            websites.splice(index, 1);
+            var url = '/api/website/'+websiteId;
+            return $http.delete(url)
+                        .then(function(response) {
+                            return response.data
+                        });
         }
     }
 })();
