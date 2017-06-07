@@ -1,4 +1,4 @@
-var app = require('../../../express');
+var app = require('../../express');
 
 app.post  ('/api/user/:userId/website', createWebsite);
 app.get   ('/api/user/:userId/website', findWebsitesByUserId);

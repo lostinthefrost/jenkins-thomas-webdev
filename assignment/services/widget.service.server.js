@@ -1,4 +1,4 @@
-var app = require('../../../express');
+var app = require('../../express');
 
 var multer = require('multer');
 var upload = multer({ dest: __dirname+'/../../public/uploads' });

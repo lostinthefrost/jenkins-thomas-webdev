@@ -14,7 +14,7 @@
         }
 
         function searchPhotos(searchTerm) {
-            flickrService
+            FlickrService
                 .searchPhotos(searchTerm)
                 .then(function(response) {
                     data = response.data.replace('jsonFlickrApi(', '');

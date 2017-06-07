@@ -30,6 +30,10 @@
                     <input ng-model="model.widget.size" type="text" class="form-control" id="size">
                 </div>
             </form>
+            <a ng-click="model.deleteWidget(model.widgetId)"
+               class="btn btn-danger btn-block">
+                Delete
+            </a>
         </div>
 
         <div ng-switch-when="IMAGE">
@@ -59,6 +63,14 @@
                href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                 Upload Image
             </a>
+            <a class="btn btn-primary btn-block"
+               href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}/search">
+                Search
+            </a>
+            <a ng-click="model.deleteWidget(model.widgetId)"
+               class="btn btn-danger btn-block">
+                Delete
+            </a>
         </div>
 
         <div ng-switch-when="YOUTUBE">
@@ -80,12 +92,12 @@
                     <input ng-model="model.widget.width" type="text" class="form-control" id="width">
                 </div>
             </form>
+            <a ng-click="model.deleteWidget(model.widgetId)"
+               class="btn btn-danger btn-block">
+                Delete
+            </a>
         </div>
 
-        <a ng-click="model.deleteWidget(model.widgetId)"
-           class="btn btn-danger btn-block">
-            Delete
-        </a>
     </div>
 </div>
 

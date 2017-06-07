@@ -3,7 +3,7 @@
         .module('WebAppMaker')
         .factory('WidgetService', WidgetService);
 
-    function WidgetService() {
+    function WidgetService($http) {
 
         return {
             createWidget        : createWidget,
@@ -15,7 +15,7 @@
 
         function createWidget(pageId, widget) {
             var url = '/api/page/'+pageId+'/widget';
-            return $http.post(url, page)
+            return $http.post(url, widget)
                         .then(function(response) {
                             return response.data
                         });
