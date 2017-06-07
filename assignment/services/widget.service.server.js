@@ -6,6 +6,7 @@ var upload = multer({ dest: __dirname+'/../../public/uploads' });
 app.post  ('/api/upload', upload.single('myFile'), uploadImage);
 app.post  ('/api/page/:pageId/widget', createWidget);
 app.get   ('/api/page/:pageId/widget', findWidgetsByPageId);
+app.put   ('/api/page/:pageId/widget', sortWidget);
 app.get   ('/api/widget/:widgetId',    findWidgetById);
 app.put   ('/api/widget/:widgetId',    updateWidget);
 app.delete('/api/widget/:widgetId',    deleteWidget);
@@ -40,7 +41,7 @@ function uploadImage(req, res) {
     var widget = getWidgetById(widgetId);
     widget.url = '/uploads/'+filename;
 
-    var callbackUrl = '/assignment/index.html#!/user/'+userId+'/website/'+websiteId+'/widget/'+widgetId;
+    var callbackUrl = '/assignment/#!/user/'+userId+'/website/'+websiteId+'/widget/'+widgetId;
 
     res.redirect(callbackUrl);
 }
@@ -64,11 +65,48 @@ function findWidgetsByPageId(req, res) {
     res.json(resultSet);
 }
 
-function findWidgetById(req, res) {
-    var widget = widgets.find(function(widget) {
-        return widget._id === req.params['widgetId'];
+function sortWidget(req, res) {
+        var pageId    = req.params['pageId'];
+        var old_index = req.query['initial'];
+        var new_index = req.query['final'];
+
+        if (old_index < 0) {
+            res.sendStatus(400);
+            return;
+        }
+
+        var widgetsOnPage = [];
+        for (var w in widgets) {
+            var widget = widgets[w];
+            if (widget.pageId == pageId)
+                widgetsOnPage.push(widget);
+        }
+
+        if (new_index >= widgetsOnPage.length) {
+            res.sendStatus(400);
+            return;
+        }
+
+        widgetsOnPage.splice(new_index, 0, widgetsOnPage.splice(old_index, 1)[0]);
+
+        for (var w in widgetsOnPage) {
+            var widget = widgetsOnPage[w];
+            var index = widgets.indexOf(widget);
+            widgets.splice(index, 1);
+            widgets = widgets.concat([widget]);
+        }
+
+        res.sendStatus(200);
+}
+
+function getWidgetById(widgetId) {
+    return widgets.find(function(widget) {
+        return widget._id === widgetId;
     });
-    res.json(widget);
+}
+
+function findWidgetById(req, res) {
+    res.json(getWidgetById(req.params['widgetId']));
 }
 
 function updateWidget(req, res) {
