@@ -1,5 +1,5 @@
 var app = require('../../express');
-var userModel = require('./user.model.server');
+var userModel = require('../model/user/user.model.server');
 
 app.post  ('/api/user', createUser);
 app.get   ('/api/user', findUserByCredentials);

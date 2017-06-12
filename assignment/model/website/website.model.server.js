@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var websiteSchema = require('./website.schema.server');
 var websiteModel = mongoose.model('websiteModel', websiteSchema);
 
-websiteModel.createWebsiteForUser = createWebsiteForUser;
-websiteModel.findAllWebsitesForUser = findAllWebsitesForUser;
+websiteModel.createWebsite = createWebsite;
+websiteModel.findWebsitesByUserId = findWebsitesByUserId;
 websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.updateWebsite = updateWebsite;
 websiteModel.deleteWebsite = deleteWebsite;

@@ -1,5 +1,5 @@
 var app = require('../../express');
-var widgetModel = require('./widget.model.server');
+var widgetModel = require('../model/widget/widget.model.server');
 
 var multer = require('multer');
 var upload = multer({ dest: __dirname+'/../../public/uploads' });
@@ -110,7 +110,6 @@ function findWidgetById(req, res) {
         }, function(err) {
             res.sendStatus(404);
         });
-    });
 }
 
 function updateWidget(req, res) {
@@ -123,7 +122,6 @@ function updateWidget(req, res) {
         }, function(err) {
             res.sendStatus(404);
         });
-    });
 }
 
 function deleteWidget(req, res) {
@@ -135,5 +133,4 @@ function deleteWidget(req, res) {
         }, function(err) {
             res.sendStatus(404);
         });
-    });
 }

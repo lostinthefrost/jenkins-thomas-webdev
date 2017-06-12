@@ -1,5 +1,5 @@
 var app = require('../../express');
-var websiteModel = require('./website.model.server');
+var websiteModel = require('../model/website/website.model.server');
 
 app.post  ('/api/user/:userId/website', createWebsite);
 app.get   ('/api/user/:userId/website', findWebsitesByUserId);

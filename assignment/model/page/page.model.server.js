@@ -3,7 +3,7 @@ var pageSchema = require('./page.schema.server');
 var pageModel = mongoose.model('pageModel', pageSchema);
 
 pageModel.createPage = createPage;
-pageModel.findAllPagesForWebsite = findAllPagesForWebsite;
+pageModel.findPagesByWebsiteId = findPagesByWebsiteId;
 pageModel.findPageById = findPageById;
 pageModel.updatePage = updatePage;
 pageModel.deletePage = deletePage;
