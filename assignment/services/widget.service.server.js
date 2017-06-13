@@ -48,9 +48,10 @@ function uploadImage(req, res) {
 }
 
 function createWidget(req, res) {
+    var pageId = req.params['pageId'];
     var widget = req.params['widget'];
     widgetModel
-        .createWidget(widget)
+        .createWidget(pageId, widget)
         .then(function(widget) {
             res.json(widget);
         });
