@@ -7,6 +7,7 @@
 
         var model = this;
         model.userId = $routeParams['userId'];
+        model.logout = updateUser;
         model.updateUser = updateUser;
         model.deleteUser = deleteUser;
 
@@ -19,10 +20,18 @@
         }
         init();
 
+        function logout() {
+            UserService
+                .logout()
+                .then(function() {
+                    $location.url('/login');
+                });
+        }
+
         function deleteUser(user) {
             UserService
                 .deleteUser(user._id)
-                .then(function () {
+                .then(function() {
                     $location.url('/login');
                 });
         }
@@ -30,7 +39,7 @@
         function updateUser(user) {
             UserService
                 .updateUser(user._id, user)
-                .then(function () {
+                .then(function() {
                     model.message = 'User updated successfully';
                 });
         }
